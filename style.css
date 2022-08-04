@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+}
+
+.wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logo {
+    width: 220px;
+    height: 220px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    transform: skewX(-15deg) scale(1);
+    transition: transform .5s linear;
+
+}
+
+.square:hover {
+    transform: skewX(-15deg) scale(0);
+}
+
+.red {
+    position: relative;
+    background-color: red;
+    transform-origin: 100% 100%;
+}
+
+.red::after,
+.blue::after,
+.yellow::after,
+.green::after {
+    content: '';
+    width: 100px;
+    height: 20px;
+    position: absolute;
+    top: -11px;
+    left: 0;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.red::before,
+.blue::before,
+.yellow::before,
+.green::before {
+    content: '';
+    width: 100px;
+    height: 20px;
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.blue::after {
+    background-color: blue;
+}
+
+.yellow::after {
+    background-color: white;
+}
+
+.yellow::before {
+    background-color: yellow;
+}
+
+.green::after {
+    background-color: white;
+}
+
+.green::before {
+    background-color: green;
+}
+
+.red:hover {
+    transform-origin: 100% 100%;
+}
+
+.green {
+    background-color: green;
+    transform-origin: 0 100%;
+    z-index: 2;
+}
+
+.green:hover {
+    transform-origin: 0 100%
+}
+
+.blue {
+    background-color: blue;
+    transform-origin: 100% 0%;
+}
+
+.blue:hover {
+    transform-origin: 100% 0%;
+}
+
+.yellow {
+    background-color: yellow;
+    transform-origin: 0% 0%;
+}
